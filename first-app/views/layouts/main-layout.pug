@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageTitle}
+        link(
+            rel = "stylesheet"
+            href = "/css/main.css"
+        )
+        //Since we may want to inject custom content, we can define 'blocks' to do so
+        //For example, this block lets us use styling pertaining to a specific page
+        block styles
+    body
+        header(class = "main-header")
+                nav(class = "main-header__nav")
+                    ul(class = "main-header__item-list")
+                        li(class = "main-header__item")
+                            a(
+                                href = "../"
+                                class = (path === '/' ? 'active' : '')
+                            ) Shop
+                        li(class = "main-header__item")
+                            a(
+                                href = "/products"
+                                class = (path === '/products' ? 'active' : '')
+                            ) Products
+                        li(class = "main-header__item")
+                            a(
+                                href = "/cart"
+                                class = (path === '/cart' ? 'active' : '')
+                            ) Cart
+                        li(class = "main-header__item")
+                            a(
+                                href = "/orders"
+                                class = (path === "/orders" ? "active" : "")
+                            ) Orders
+                        li(class = "main-header__item")
+                            //-
+                                Our admin/add-product route passes a path to our template
+                                If the route is /admin/add-product, then the template will
+                                add an .active class to th Add Product link in our nav.
+                            //
+                            a(
+                                href="/admin/add-product" 
+                                class = (path === '/admin/add-product' ? 'active' : '')
+                            ) Add Product
+                        li(class = "main-header__item")
+                            a(
+                                href = "/admin/products"
+                                class = (path === '/admin/products' ? 'active' : '')
+                            ) Admin Products
+        block content

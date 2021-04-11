@@ -1,0 +1,29 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/product.css")
+
+block content
+   main
+            if prods.length > 0
+                div(class = "grid")
+                    //to loop, do each el in var-array
+                    each product in prods
+                        article(class = "card product-item")
+                            header(class = "card__header")
+                                h1(class = "product__title") #{product.title}
+                            div(class = "card__image")
+                                img(
+                                    src = product.imageUrl
+                                    alt = "A Book"
+                                )
+                            div(class = "card__content")
+                                h2(class="product__price") $#{product.price}
+                                p(class = "product__description") #{product.description}
+                            div(class ="card__actions")
+                                form(action = "/add-to-cart" method = "POST")
+                                    button(class = "btn") Add to Cart
+            else
+                h1 No Products
+        
+            

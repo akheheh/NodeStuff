@@ -1,0 +1,45 @@
+.list-container {
+    margin: 0;
+    background: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 7px -1px rgba(198, 198, 198, 0.25);
+}
+
+
+.list-container .list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-container .list .list-item, .list-container .list .list-header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #D5D5D5;
+    
+}
+
+.list-container .list .list-header .header-name, .header-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 20px;
+}
+
+.list-container .list .list-item .list-item-el {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: 20px;
+}
+
+.list-container .list .list-item .list-item-el.item-price {
+    color: #0C94B1;
+}
+
+
+
+
+
+
+
